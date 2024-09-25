@@ -40,7 +40,7 @@
         <version>${jib-maven-plugin.version}</version>
         <configuration>
           <to>
-            <image>gcr.io/REPLACE-WITH-YOUR-GCP-PROJECT/image-built-with-jib</image>
+            <image>ttl.sh/jpadams/image-built-with-jib</image>
           </to>
         </configuration>
         <executions>
