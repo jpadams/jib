@@ -39,6 +39,11 @@
         <artifactId>jib-maven-plugin</artifactId>
         <version>${jib-maven-plugin.version}</version>
         <configuration>
+            <outputPaths>
+                <tar>target/image-built-with-jib.tar</tar>
+            </outputPaths>
+        </configuration>
+        <configuration>
           <to>
             <image>ttl.sh/jpadams/image-built-with-jib</image>
           </to>
