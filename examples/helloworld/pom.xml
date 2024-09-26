@@ -39,18 +39,28 @@
         <artifactId>jib-maven-plugin</artifactId>
         <version>${jib-maven-plugin.version}</version>
         <configuration>
-          <outputPaths>
-            <tar>target/image-built-with-jib.tar</tar>
-          </outputPaths>
           <to>
             <image>ttl.sh/jpadams/image-built-with-jib</image>
           </to>
+          <outputPaths>
+            <tar>target/image-built-with-jib.tar</tar>
+          </outputPaths>
         </configuration>
         <executions>
+          <!-- Execution for pushing to a registry (build goal) with <to> block -->
           <execution>
+            <id>jib-build</id>
             <phase>package</phase>
             <goals>
               <goal>build</goal>
+            </goals>
+          </execution>
+          <!-- Execution for creating tarball (buildTar goal) -->
+          <execution>
+            <id>jib-build-tar</id>
+            <phase>package</phase>
+            <goals>
+              <goal>buildTar</goal>
             </goals>
           </execution>
         </executions>
